@@ -1,6 +1,21 @@
 import { AnalysisResponse } from "./types";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
+const getApiBase = (): string => {
+  if (process.env.NEXT_PUBLIC_API_BASE_URL) {
+    return process.env.NEXT_PUBLIC_API_BASE_URL;
+  }
+  
+  if (typeof window !== "undefined") {
+    const hostname = window.location.hostname;
+    if (hostname.includes("vercel.app") || hostname.includes("pronounce-ai-green")) {
+      return "https://pronounce-ai-odac.vercel.app";
+    }
+  }
+  
+  return "http://localhost:8000";
+};
+
+const API_BASE = getApiBase();
 
 export async function analyzeAudio(file: File, consent: boolean): Promise<AnalysisResponse> {
   const body = new FormData();
