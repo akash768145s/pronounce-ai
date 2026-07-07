@@ -8,7 +8,12 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     app_name: str = "Livo Pronunciation AI"
     environment: str = Field(default="development")
-    cors_origins: list[str] = Field(default_factory=lambda: ["http://localhost:3000"])
+    cors_origins: list[str] = Field(
+        default_factory=lambda: [
+            "http://localhost:3000",
+            "https://pronounce-ai-green.vercel.app",
+        ]
+    )
     max_upload_mb: int = 25
     min_duration_seconds: float = 30
     max_duration_seconds: float = 45
