@@ -1,0 +1,14 @@
+{
+  "name": "pronounce-ai-pdf-generator",
+  "version": "1.0.0",
+  "description": "High-fidelity PDF document compiler for PronounceAI System Architecture.",
+  "main": "generate-pdf.js",
+  "scripts": {
+    "generate": "node generate-pdf.js"
+  },
+  "dependencies": {
+    "highlight.js": "^11.9.0",
+    "markdown-it": "^14.1.0",
+    "puppeteer": "^22.12.1"
+  }
+}
