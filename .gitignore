@@ -53,6 +53,7 @@ Thumbs.db
 *.aac
 *.m4a
 *.pdf
+!SYSTEM_ARCHITECTURE.pdf
 pronunciation-report.json
 tmp/
 temp/
