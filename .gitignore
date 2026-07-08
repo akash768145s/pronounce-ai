@@ -48,10 +48,10 @@ Thumbs.db
 .vscode/
 
 # Generated reports and temporary media
-*.wav
-*.mp3
-*.aac
-*.m4a
+# *.wav
+# *.mp3
+# *.aac
+# *.m4a
 *.pdf
 !SYSTEM_ARCHITECTURE.pdf
 pronunciation-report.json
